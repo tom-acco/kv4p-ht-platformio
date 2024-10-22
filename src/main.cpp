@@ -15,6 +15,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.        If not, see <http://www.gnu.org/licenses/>.
 */
+
 #include <Arduino.h>
 #include <algorithm>
 #include <DRA818.h>
@@ -116,7 +117,7 @@ void initI2SRx() {
         .sample_rate = AUDIO_SAMPLE_RATE + SAMPLING_RATE_OFFSET,
         .bits_per_sample = I2S_BITS_PER_SAMPLE_32BIT,
         .channel_format = I2S_CHANNEL_FMT_ONLY_LEFT,
-        .communication_format = i2s_comm_format_t(I2S_COMM_FORMAT_I2S | I2S_COMM_FORMAT_I2S_MSB),
+        .communication_format = i2s_comm_format_t(I2S_COMM_FORMAT_STAND_I2S | I2S_COMM_FORMAT_STAND_MSB),
         .intr_alloc_flags = ESP_INTR_FLAG_LEVEL1,
         .dma_buf_count = 4,
         .dma_buf_len = I2S_READ_LEN,
