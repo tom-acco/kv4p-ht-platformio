@@ -177,9 +177,9 @@ void setMode(int newMode) {
 
 void setup() {
     // Communication with Android via USB cable
-    Serial.begin(921600);
     Serial.setRxBufferSize(USB_BUFFER_SIZE);
     Serial.setTxBufferSize(USB_BUFFER_SIZE);
+    Serial.begin(921600);
 
     // Configure watch dog timer (WDT), which will reset the system if it gets stuck somehow.
     esp_task_wdt_init(10, true);    // Reboot if locked up for a bit
